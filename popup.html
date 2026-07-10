@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intent Guard</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <span class="header-icon">🎯</span>
+      <h1 class="header-title">Intent Guard</h1>
+    </div>
+
+    <!-- Set Intent Section -->
+    <div class="section">
+      <label class="section-label" for="intent-input">
+        What are you focusing on right now?
+      </label>
+      <input
+        type="text"
+        id="intent-input"
+        class="intent-input"
+        placeholder="e.g. Study for JavaScript exam"
+        maxlength="80"
+      />
+      <button id="set-intent-btn" class="btn btn-primary">
+        Set Focus Intent
+      </button>
+    </div>
+
+    <!-- Current Intent Display -->
+    <div class="section current-intent-section" id="current-intent-section">
+      <p class="section-label">Current Focus Goal:</p>
+      <p id="current-intent-display" class="intent-display">
+        No intent set yet
+      </p>
+      <button id="clear-intent-btn" class="btn btn-secondary">
+        Clear Intent
+      </button>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+      <div class="stat-card">
+        <span class="stat-number" id="distraction-count">0</span>
+        <span class="stat-label">Distractions Today</span>
+      </div>
+      <button id="reset-count-btn" class="btn btn-ghost">
+        Reset Count
+      </button>
+    </div>
+
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

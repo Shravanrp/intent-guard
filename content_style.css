@@ -1,0 +1,113 @@
+/* ─── OVERLAY: covers the entire page ─── */
+#intent-guard-overlay {
+  position: fixed;         /* Stays put even when the page scrolls */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 2147483647;     /* Highest possible z-index — sits above everything */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  animation: intentFadeIn 0.3s ease;
+}
+
+@keyframes intentFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── BOX: the card in the center ─── */
+#intent-guard-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 48px;
+  text-align: center;
+  max-width: 440px;
+  width: 90%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+#intent-guard-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+#intent-guard-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 20px;
+}
+
+.intent-guard-label {
+  font-size: 13px;
+  color: #888;
+  margin: 16px 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#intent-guard-goal {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2563eb;        /* Blue — the user's goal is important */
+  margin: 0;
+}
+
+#intent-guard-site {
+  font-size: 16px;
+  font-weight: 500;
+  color: #dc2626;        /* Red — the distraction is flagged */
+  margin: 0;
+}
+
+#intent-guard-question {
+  font-size: 14px;
+  color: #555;
+  margin: 24px 0 28px;
+}
+
+/* ─── BUTTONS ─── */
+#intent-guard-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+#intent-go-back-btn,
+#intent-stay-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+#intent-go-back-btn {
+  background: #2563eb;
+  color: white;
+}
+
+#intent-go-back-btn:hover {
+  opacity: 0.85;
+}
+
+#intent-stay-btn {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+#intent-stay-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#intent-stay-btn:not(:disabled):hover {
+  background: #e5e7eb;
+  color: #374151;
+}
